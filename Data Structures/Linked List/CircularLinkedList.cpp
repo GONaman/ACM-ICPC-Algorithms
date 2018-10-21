@@ -1,4 +1,8 @@
-#include<iostream>
+#include<bits/stdc++.h>
+#include<conio.h>
+#include<string.h>
+#include<string>
+#include<stdlib.h>
 using namespace std;
 
 struct node
@@ -6,10 +10,11 @@ struct node
     int info;
     node *link;
 };
+typedef struct node NODE;
 
 class circlist
 {
-    node *top = NULL,*ptr,*rear = NULL,*end = NULL;
+    NODE *top = NULL,*ptr,*rear = NULL,*end = NULL;
     int x,count;
 public:
 
@@ -27,7 +32,7 @@ void circlist::insert()
     {
         cout<<"\nEnter element : ";
         cin>>x;
-        ptr = new node;
+        ptr = new NODE;
         ptr->info = x;
         if(top == NULL)
         {
@@ -47,7 +52,7 @@ void circlist::insert()
 }
 void circlist::display()
 {
-    node *tp = top;
+    NODE *tp = top;
     while(tp->link != top)
     {
         cout<<tp->info<<"\n";
@@ -60,7 +65,7 @@ void circlist::display()
 
 void circlist::del()
 {
-    node *a;
+    NODE *a;
     char ch = 'y';
     while(ch == 'y' || ch == 'Y')
     {
@@ -81,6 +86,7 @@ int main()
     int choice;
     while(1)
     {
+        system("CLS");
         cout<<"\nMENU\n1.Insertion\n2.Display\n3.Deletion\n4.Exit";
         cout<<"\nEnter choice : ";
         cin>>choice;
